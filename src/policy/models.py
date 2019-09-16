@@ -10,3 +10,6 @@ class Policy(models.Model):
 
     class Meta:
         db_table = 'policy'
+
+    def __str__(self):
+        return 'Policy: ' + self.type
