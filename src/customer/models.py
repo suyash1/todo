@@ -9,3 +9,4 @@ class Customer(AbstractUser):
 
     class Meta:
         db_table = 'customer'
+        ordering = ['-id']
