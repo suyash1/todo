@@ -14,5 +14,25 @@ This is a demo project to create user, policies and subscribe a user to policy.
 
 #### APIs
 
+##### Create a customer
+```
+    curl -X POST \
+    http://localhost:8000/customer \
+    -F first_name=john \
+    -F last_name=doe \
+    -F dob=1989-11-17 \
+    -F email=john@xyz.com
+```
 
+##### Get a single customer by customer id
+```
+    curl -X GET \
+  http://localhost:7000/customer/5
+```
+
+##### Get all the customers
+```
+    curl -X GET \
+  http://localhost:7000/customer/5
+```
 
