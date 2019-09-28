@@ -24,7 +24,7 @@ def get_object_by(model=None, key=None, val=None):
     except model.DoesNotExist:
         raise model.DoesNotExist
     except FieldError:
-        raise model.DoesNotExist("Field `%s` not found" % field)
+        raise model.DoesNotExist("Field `%s` not found" % key)
 
 
 def get_all_objects(model=None):
@@ -44,5 +44,17 @@ def filter_object(model=None, key=None, value=None):
 
     try:
         return model.objects.filter(**{key: value})
+    except model.DoesNotExist:
+        raise Http404
+
+
+def delete_object(model=None, key=None, value=None):
+    if not model:
+        return HttpResponse('Bad request', status=400)
+    if not key or not value:
+        return HttpResponse('Bad request', status=400)
+
+    try:
+        return model.objects.delete(**{key: value})
     except model.DoesNotExist:
         raise Http404
