@@ -1,5 +1,5 @@
 #### About
-This is a demo project to create user, policies and subscribe a user to policy.
+This is a demo project to create, update, delete and read tasks
 
 #### Prerequisites
 * Python 3.6+
