@@ -15,66 +15,35 @@ This is a demo project to create user, policies and subscribe a user to policy.
 #### APIs
 You can use Postman to try out APIs. For testing the below, copy cURL requests and import in Postman.=
 
-##### Create a customer
-```
-    curl -X POST \
-        http://localhost:8000/customer \
-        -F first_name=john \
-        -F last_name=doe \
-        -F dob=1989-11-17 \
-        -F email=john@xyz.com
-```
 
-##### Get a single customer by customer id
+##### Get a single task by task id
 ```
     curl -X GET \
-        http://localhost:8000/customer/1
+        http://localhost:8000/task/1
 ```
 
-##### Get all the customers
+##### Get all the tasks
 ```
     curl -X GET \
         http://localhost:8000/customer
 ```
 
-##### Create a Policy product
+##### Create a task 
 ```
     curl -X POST \
-        http://localhost:8000/policy \
-        -F policy_type=personal-health \
-        -F premium=100 \
-        -F cover=10000
+        http://localhost:8000/task \
+        -F title=something \
+        -F due_date=yyyy-mm-dd
 ```
-
-##### Get a policy info by policy id
+##### Update a task
 ```
-    curl -X GET \
-        http://localhost:8000/policy/1
+curl -X PUT \
+  http://localhost:8000/task/1 \
+  -F 'title=new title' \
+  -F due_date=2019-10-01
+  ```
+##### Delete a task
 ```
-
-##### Get all the policy products
+curl -X DELETE \
+  http://localhost:8000/task/2
 ```
-    curl -X GET \
-        http://localhost:8000/policy
-```
-
-##### Create a Customer Policy subscription
-```
-    curl -X POST \
-        http://localhost:8000/policy_subscription \
-        -F customer=1 \
-        -F policy=1
-```
-
-##### Get a policy subscription info by subscription id
-```
-    curl -X GET \
-        http://localhost:8000/policy_subscription/1
-```
-
-##### Get all the policy subscriptions
-```
-    curl -X GET \
-        http://localhost:8000/policy_subscription
-```
-
