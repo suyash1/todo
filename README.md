@@ -25,7 +25,7 @@ You can use Postman to try out APIs. For testing the below, copy cURL requests a
 ##### Get all the tasks
 ```
     curl -X GET \
-        http://localhost:8000/customer
+        http://localhost:8000/task
 ```
 
 ##### Create a task 
